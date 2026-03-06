@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Laptop {
+class Laptop {
     String id;
     String merk;
     String tipe;
@@ -17,6 +17,13 @@ public class Laptop {
         this.harga = harga;
         this.stok = stok;
     }
+
+    void tampilkanInfo() {
+        System.out.printf("| %-5s | %-10s | %-20s | Rp %-12.2f | %-4d |\n", id, merk, tipe, harga, stok);
+    }
+}
+
+public class WahyuTechApp {
 
     void main() {
         ArrayList<Laptop> daftarLaptop = new ArrayList<>();
@@ -55,10 +62,12 @@ public class Laptop {
         System.out.println("============================================");
         System.out.print("ID Laptop    : ");
         String id = scanner.nextLine();
+        
         if (!validasiId(daftarLaptop, id)) {
             System.out.println("ID sudah ada. Silakan gunakan ID lain.");
-            return;
+            return; // Menghentikan proses tambah data dan kembali ke menu
         }
+        
         System.out.print("Merk         : ");
         String merk = scanner.nextLine();
         System.out.print("Tipe/Model   : ");
@@ -159,10 +168,6 @@ public class Laptop {
         if (!dihapus) {
             System.out.println("Laptop dengan ID " + idCari + " tidak ditemukan.");
         }
-    }
-
-    void tampilkanInfo() {
-        System.out.printf("| %-5s | %-10s | %-20s | Rp %-12.2f | %-4d |\n", id, merk, tipe, harga, stok);
     }
 
     boolean validasiId(ArrayList<Laptop> daftarLaptop, String id) {
