@@ -65,7 +65,7 @@ public class WahyuTechApp {
         
         if (!validasiId(daftarLaptop, id)) {
             System.out.println("ID sudah ada. Silakan gunakan ID lain.");
-            return; // Menghentikan proses tambah data dan kembali ke menu
+            return;
         }
         
         System.out.print("Merk         : ");
@@ -107,7 +107,7 @@ public class WahyuTechApp {
             System.out.println("Data masih kosong.");
             return;
         }
-
+        tampilkanLaptop(daftarLaptop);
         System.out.print("Masukkan ID Laptop yang ingin diupdate: ");
         String idCari = scanner.nextLine();
         boolean ditemukan = false;
@@ -151,7 +151,7 @@ public class WahyuTechApp {
             System.out.println("Data masih kosong.");
             return;
         }
-
+        tampilkanLaptop(daftarLaptop);
         System.out.print("Masukkan ID Laptop yang ingin dihapus: ");
         String idCari = scanner.nextLine();
         boolean dihapus = false;
