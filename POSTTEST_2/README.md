@@ -161,6 +161,28 @@ Proses menangani input id yang sudah ada
 
 ## Cara Menjalankan
 
-1. Compile program
-2. Jalankan aplikasi
-3. Ikuti instruksi di layar
+Program ini sudah menggunakan **Maven** sebagai _build tool_ dan memiliki _library_ eksternal, cara terbaik untuk menjalankannya adalah melalui terminal/Command Prompt.
+
+Pastikan sudah menginstal Maven (dan mengatur _Environment Variables_ di komputermu) atau membuka terminal langsung dari dalam IntelliJ IDEA.
+
+**Langkah-langkah eksekusi:**
+
+1. **Buka Terminal**
+   Pastikan posisi terminal sedang berada di dalam folder utama proyek (folder yang memiliki file `pom.xml`).
+
+2. **Kompilasi Program (Compile)**
+   Ketikkan perintah berikut untuk membersihkan _cache_ lama, mengunduh _library_ `commons-lang3`, dan mengkompilasi ulang semua _class_ Java:
+
+   ```bash
+   mvn clean compile
+   ```
+
+3. **Jalankan Aplikasi (Run)**
+   Setelah berhasil dikompilasi, jalankan class utama aplikasi (WahyuTechApp) dengan perintah berikut:
+
+   ```bash
+   mvn exec:java "-Dexec.mainClass=com.wahyutech.app.WahyuTechApp"
+   ```
+
+4. **Gunakan Aplikasi**
+   Program akan langsung berjalan di terminal. Silakan masukkan angka pilihan menu (1-5) dan tekan Enter untuk berinteraksi dengan sistem manajemen data laptop.
